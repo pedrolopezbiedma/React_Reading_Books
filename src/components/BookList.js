@@ -8,9 +8,9 @@ const BookList = ({ books, onBookDeletion }) => {
     return (
         <div className="book-list">
             { 
-            books.map((book) => 
-                <BookDetails key={book.id} book={book} onDeleteBook={handleDeleteBook} />
-                ) 
+                books.map((book) => 
+                    <BookDetails key={book.id} book={book} onDeleteBook={handleDeleteBook} />
+                )
             }
         </div>
     )
