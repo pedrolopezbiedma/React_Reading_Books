@@ -12,6 +12,16 @@ const App = () => {
         ])
     }
 
+    const handleBookEdition = (id, newTitle) => {
+          setBooks([...books.map((book) => {
+            if (book.id === id) {
+              return { ...book, title: newTitle };
+            }
+      
+            return book;
+          })]);
+    }
+
     const handleBookDeletion = (id) => {
         setBooks([
             ...books.filter((book) => {
@@ -22,8 +32,9 @@ const App = () => {
 
     return (
         <div className="app">
+            <h1>Reading List</h1>
             <BookCreate onBookCreation={handleBookCreation} />
-            <BookList books={books} onBookDeletion={handleBookDeletion} />
+            <BookList books={books} onBookDeletion={handleBookDeletion} onBookEdition={handleBookEdition}/>
         </div>
     )
 }
