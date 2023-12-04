@@ -1,6 +1,9 @@
+import useBooksContext from "../hooks/useBooksContext"
 import BookDetails from "./BookDetails"
 
-const BookList = ({ books }) => {
+const BookList = () => {
+    const { books } = useBooksContext()
+
     return (
         <div className="book-list">
             { 
