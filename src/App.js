@@ -11,7 +11,6 @@ const App = () => {
     useEffect(() => {
        const fetchBooks = async () => {
             const response = await axios.get('http://localhost:3001/books')
-            console.log('response is -->', response)
             setBooks(response.data)
         }
 
@@ -25,17 +24,21 @@ const App = () => {
         ])
     }
 
-    const handleBookEdition = (id, newTitle) => {
-          setBooks([...books.map((book) => {
-            if (book.id === id) {
-              return { ...book, title: newTitle };
-            }
-      
-            return book;
-          })]);
+    const handleBookEdition = async (id, newTitle) => {
+        const response = await axios.put(`http://localhost:3001/books/${id}`,{ title: newTitle })
+
+        setBooks([...books.map((book) => {
+        if (book.id === id) {
+            return { ...response.data };
+        }
+    
+        return book;
+        })]);
     }
 
-    const handleBookDeletion = (id) => {
+    const handleBookDeletion = async (id) => {
+        await axios.delete(`http://localhost:3001/books/${id}`)
+
         setBooks([
             ...books.filter((book) => {
                 return book.id !== id;

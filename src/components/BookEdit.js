@@ -6,7 +6,6 @@ const BookEdit = ({ book, onBookEdition }) => {
     const handleSubmit =  (event) => {
         event.preventDefault();
         onBookEdition(book.id, title)
-
     }
 
     return (
