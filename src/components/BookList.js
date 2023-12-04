@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import BookDetails from "./BookDetails"
+import BooksContext from "../context/BooksContext";
 
 const BookList = ({ books, onBookDeletion, onBookEdition }) => {
+    const value = useContext(BooksContext);
+
     const handleBookDeletion = (id) => {
         onBookDeletion(id)
     }
@@ -11,6 +15,7 @@ const BookList = ({ books, onBookDeletion, onBookEdition }) => {
 
     return (
         <div className="book-list">
+            { value }
             { 
                 books.map((book) => 
                     <BookDetails
