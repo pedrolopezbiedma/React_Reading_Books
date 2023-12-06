@@ -10,7 +10,7 @@ const App = () => {
     // Initial books loading
     useEffect(() => {
         fetchBooks();
-    }, [])
+    }, [fetchBooks])
 
     return (
         <div className="app">
