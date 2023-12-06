@@ -4,10 +4,13 @@ Repository created following this [Udemy Course](https://www.udemy.com/course/re
 
 - Advanced comunication between components.
 - Advanced handling of forms.
+- Context.
+- Initial glance at hooks.
+- Data persistance.
 
 ## Application
 
-Application has an input to type the name of a book. Once you hit enter / click Save, a new tile will be displayed with the book title and a random image. You can remove & edit the already existing tiles.
+Application has an input to type the name of a book. Once you hit enter / click Save, a new tile will be displayed with the book title and a random image. You can remove & edit the already existing tiles. To persist the information, json-server package is being used.
 
 ![Screenshot](src/utils/Reading_Books.png)
 
@@ -25,7 +28,13 @@ Install dependencies
   npm install
 ```
 
-Start the server
+Start the json-server
+
+```bash
+  npm run server
+```
+
+Start the server ( in another console )
 
 ```bash
   npm run start
