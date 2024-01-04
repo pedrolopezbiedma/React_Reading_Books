@@ -28,13 +28,13 @@ Install dependencies
   npm install
 ```
 
-Start the json-server
+Start the server in another console
 
 ```bash
   npm run server
 ```
 
-Start the server ( in another console )
+Start the application
 
 ```bash
   npm run start
